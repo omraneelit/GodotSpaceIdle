@@ -6,6 +6,23 @@ signal health_changed(new_hp)
 
 func _ready():
     print("Godot Game Manager Initialized!")
+    _setup_p2_inputs()
+
+func _setup_p2_inputs():
+    var keys = {
+        "p2_left": KEY_LEFT,
+        "p2_right": KEY_RIGHT,
+        "p2_up": KEY_UP,
+        "p2_down": KEY_DOWN,
+        "p2_jump": KEY_ENTER
+    }
+    
+    for action in keys.keys():
+        if not InputMap.has_action(action):
+            InputMap.add_action(action)
+            var ev = InputEventKey.new()
+            ev.keycode = keys[action]
+            InputMap.action_add_event(action, ev)
 
 func update_health_ui(hp: int):
     health_changed.emit(hp)

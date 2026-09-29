@@ -24,6 +24,12 @@ func _ready():
     # Restore saved Bots and Turrets!
     SaveManager.call_deferred("restore_base")
     
+    # Spawn Local Co-Op Player 2!
+    var p2 = load("res://player2.gd").new()
+    p2.name = "Player2"
+    p2.position = Vector3(2.0, 1.5, 5.0) # Slightly to the right of Player 1
+    add_child(p2)
+    
     # Spawn the Endgame Rocketship in Phase 4
     var rocket = load("res://rocketship.gd").new()
     rocket.position = Vector3(0, 0, -140) # Deep at the end of World 4

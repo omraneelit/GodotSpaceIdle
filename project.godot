@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Space Arcade Idle"
-run/main_scene="res://main.tscn"
+run/main_scene="res://main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -22,6 +22,8 @@ GameManager="*res://game_manager.gd"
 PhaseManager="*res://phase_manager.gd"
 ParticleManager="*res://particle_manager.gd"
 RebirthManager="*res://rebirth_manager.gd"
+GraphicsManager="*res://graphics_manager.gd"
+PauseMenu="*res://pause_menu.gd"
 
 [input]
 
